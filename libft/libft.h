@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/04 13:45:39 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/24 12:25:28 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/24 17:40:55 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,8 @@ char			*ft_strsub(char const *s, unsigned int start, size_t len);
 
 char			*ft_strjoin(char const *s1, char const *s2);
 
-char			*ft_strnjoin(char const *s1, char const *s2, unsigned char symb);
+char			*ft_strnjoin(char const *s1, char const *s2,
+								unsigned char symb);
 
 char			*ft_strtrim(char const *s);
 
