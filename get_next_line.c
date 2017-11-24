@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 18:32:18 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/22 20:31:59 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/24 12:53:35 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	sync_buff(t_list *files, const int fd, char **line)
 static int	cut_to_n_l(char *str, char *trash, long n_l_pos, char **line)
 {
 	if (!(*line = ft_strnjoin(trash, str, '\n')))
-		return (-1);
+		return (-1);	
 	ft_memdel((void **)&trash);
 	ft_strshift(str, n_l_pos + 1);
 	return (1);
