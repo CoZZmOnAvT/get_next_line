@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 12:58:11 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/25 13:08:04 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/25 13:14:28 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,25 @@ void	basic(char *filename)
 		printf("FUNC RES - |%d|, STRING - |%s|\n", tmp, line);
 }
 
+void	custom()
+{
+	char	*line;
+
+	while (get_next_line(0, &line) > 0)
+		printf("%s\n", line);
+}
+
 /*
 **	Pass 1 parameter to program to test basic functions of get_next_lien,
-**	Or 3 - to make advanced test
+**	Or 3 - to make advanced test.
+**	Zero params will cause infinite standart input test
 */
 
 int		main(int ac, char **av)
 {
-	if (ac < 2)
-		return (0);
-	if (ac == 2)
+	if (ac == 1)
+		custom();
+	else if (ac == 2)
 		basic(av[1]);
 	else if (ac == 4)
 		advanced(av[1], av[2], av[3]);
