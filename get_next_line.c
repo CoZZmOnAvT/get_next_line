@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 18:32:18 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/30 14:48:59 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:15:24 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int			get_next_line(const int fd, char **line)
 	long			bytes;
 	int				tmp;
 
-	if (!line || fd < 0 || read(fd, buff, 0) == -1)
+	if (!line || fd < 0)
 		return (-1);
 	*line = NULL;
 	tmp_f = ft_find_file(&files, fd);
