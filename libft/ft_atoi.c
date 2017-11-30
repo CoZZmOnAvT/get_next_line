@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 21:22:28 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/16 16:56:58 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/27 14:50:05 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,11 @@ int			ft_atoi(const char *s)
 	result = 0;
 	it = 0;
 	while (*s >= '0' && *s <= '9')
-	{
 		if ((result = (result * 10) + (*s++ - '0')) != 0)
 			it++;
-		if ((((it > 19 || result < 0) || (it && !result)) && sign != -1))
+		else if ((((it > 19 || result < 0) || (it && !result)) && sign != -1))
 			return (-1);
 		else if ((((it > 19 || result < 0) || (it && !result)) && sign == -1))
 			return (0);
-	}
 	return ((int)(result *= sign));
 }

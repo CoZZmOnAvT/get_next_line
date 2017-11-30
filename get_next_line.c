@@ -6,7 +6,7 @@
 /*   By: pgritsen <pgritsen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 18:32:18 by pgritsen          #+#    #+#             */
-/*   Updated: 2017/11/24 18:20:38 by pgritsen         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:48:59 by pgritsen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,9 @@ int			get_next_line(const int fd, char **line)
 	if ((bytes = sync_buff(tmp_f, line)))
 		return (bytes);
 	while ((bytes = read(fd, buff, BUFF_SIZE)))
-		if ((tmp = cut_to_n_l(tmp_f, line, buff, bytes)))
+		if (bytes == -1)
+			return (-1);
+		else if ((tmp = cut_to_n_l(tmp_f, line, buff, bytes)))
 			return (tmp);
 	return ((*line && **line) ? 1 : 0);
 }
